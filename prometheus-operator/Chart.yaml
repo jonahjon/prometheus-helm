@@ -9,11 +9,11 @@ keywords:
 - operator
 - prometheus
 maintainers:
-- email: gianrubio@gmail.com
-  name: gianrubio
-- name: vsliouniaev
+- email: jonahjo@amazon
+  name: jonahjo
 name: prometheus-operator
 sources:
 - https://github.com/coreos/prometheus-operator
 - https://coreos.com/operators/prometheus
+- https://github.com/jonahjones777/prometheus-helm
 version: 6.20.5

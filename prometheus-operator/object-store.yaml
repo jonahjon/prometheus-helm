@@ -1,8 +1,8 @@
 type: S3
 config:
   bucket: ""
-  endpoint: "s3.us-west-2.amazonaws.com"
-  region: "us-west-2"
+  endpoint: "s3.us-east-1.amazonaws.com"
+  region: "us-east-1"
   access_key: ""
   insecure: false
   signature_version2: false

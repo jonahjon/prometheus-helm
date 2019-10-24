@@ -359,19 +359,33 @@ grafana:
   enabled: true
 
   ## Deploy default dashboards.
-  ##
   defaultDashboardsEnabled: true
+
+  dashboards:
+    public:
+      helm-dashboard:
+        gnetId: 10695
+        revision: 1
+        datasource: Prometheus
+
+  service:
+    type: LoadBalancer
 
   adminPassword: prom-operator
 
   ingress:
-    enabled: true
+    enabled: false
     annotations:
-        kubernetes.io/ingress.class: alb
-        alb.ingress.kubernetes.io/scheme: internet-facing
-        alb.ingress.kubernetes.io/target-type: ip
-        alb.ingress.kubernetes.io/tags: Environment=dev,Team=test
-        alb.ingress.kubernetes.io/inbound-cidrs: 205.251.233.176/32
+        # Nginx
+        # kubernetes.io/ingress.class: nginx
+        # nginx.ingress.kubernetes.io/rewrite-target: /
+
+        # ALB Ingress
+        # kubernetes.io/ingress.class: alb
+        # alb.ingress.kubernetes.io/scheme: internet-facing
+        # alb.ingress.kubernetes.io/target-type: ip
+        # alb.ingress.kubernetes.io/tags: Environment=dev,Team=test
+        # alb.ingress.kubernetes.io/inbound-cidrs: 205.251.233.176/32
     labels: {}
     path: /grafana
 
